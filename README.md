@@ -9,7 +9,7 @@
 ---
 
 ## 📸 Ekran Görüntüleri
-*(Buraya projenin çalışan halinin 1-2 ekran görüntüsünü ekleyebilirsin)*
+![Screenshot_20260325_012426_OKOK international](https://github.com/user-attachments/assets/5c3ce6e6-9caa-4754-a8c9-a190b3fdb797)
 
 ---
 
