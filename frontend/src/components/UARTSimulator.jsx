@@ -11,7 +11,8 @@ export default function UARTSimulator() {
 
   const simulate = async () => {
     setLoading(true)
-    const res = await fetch("http://127.0.0.1:5000/api/uart/simulate", {
+    // BURASI GÜNCELLENDİ
+    const res = await fetch("https://logicviz.onrender.com/api/uart/simulate", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

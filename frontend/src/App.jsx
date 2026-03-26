@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react"
-// Bileşenlerimizi (Components) projemize dahil ediyoruz:
 import UARTSimulator from "./components/UARTSimulator"
 import I2CSimulator from "./components/I2CSimulator"
 import SPISimulator from "./components/SPISimulator"
@@ -9,7 +8,8 @@ function App() {
   const [selectedProtocol, setSelectedProtocol] = useState(null)
 
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/api/protocols")
+    // BURASI GÜNCELLENDİ
+    fetch("https://logicviz.onrender.com/api/protocols")
       .then(res => res.json())
       .then(data => {
         setProtocols(data);
@@ -20,7 +20,6 @@ function App() {
   return (
     <div style={{ background: "#0f0f0f", minHeight: "100vh", color: "white", fontFamily: "monospace", padding: "2rem" }}>
 
-      {/* BURAYI DEĞİŞTİRİYORUZ */}
       <h1 style={{ color: "#00ff88", borderBottom: "1px solid #333", paddingBottom: "1rem" }}>
         ⚡ LogicViz Analyzer
       </h1>
@@ -45,7 +44,6 @@ function App() {
         ))}
       </div>
 
-      {/* Hangi protokol seçiliyse o dosyayı render ediyoruz */}
       {selectedProtocol?.name === "UART" && <UARTSimulator />}
       {selectedProtocol?.name === "I2C" && <I2CSimulator />}
       {selectedProtocol?.name === "SPI" && <SPISimulator />}
