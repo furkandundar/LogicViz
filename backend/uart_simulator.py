@@ -1,3 +1,5 @@
+import random
+
 def text_to_uart_frames(text, baud_rate=9600, parity="none", stop_bits=1):
     frames = []
     
@@ -47,8 +49,6 @@ def text_to_uart_frames(text, baud_rate=9600, parity="none", stop_bits=1):
     return frames
 
 def simulate_uart_error(frames, error_type=None):
-    import random
-    
     if error_type == "noise":
         for frame in frames:
             # Data bitlerinden birini (index 1 ile 8 arası) rastgele ters çevir
@@ -66,4 +66,13 @@ def simulate_uart_error(frames, error_type=None):
             # Görüntüyü bozmak için rastgele bitler üret
             frame["frame"] = [random.randint(0,1) for _ in range(len(frame["frame"]))]
     
+    return frames
+
+# İŞTE EKSİK OLAN VE APP.PY'NİN ARADIĞI KÖPRÜ FONKSİYON:
+def simulate_uart(text, baud_rate=9600, parity="none", stop_bits=1, error_type=None):
+    # Önce normal çerçeveleri oluştur
+    frames = text_to_uart_frames(text, baud_rate, parity, stop_bits)
+    # Eğer bir hata tipi seçildiyse, hata simülasyonunu uygula
+    if error_type:
+        frames = simulate_uart_error(frames, error_type)
     return frames
