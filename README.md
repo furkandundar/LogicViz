@@ -9,7 +9,8 @@
 ---
 
 ## 📸 Ekran Görüntüleri
-![Screenshot_20260325_012426_OKOK international](https://github.com/user-attachments/assets/5c3ce6e6-9caa-4754-a8c9-a190b3fdb797)
+
+<img width="1871" height="1814" alt="screencapture-logic-dwhxkeybo-furkandundars-projects-vercel-app-2026-03-27-01_50_41" src="https://github.com/user-attachments/assets/2a6e40aa-bee6-4f9b-800f-103da3676f24" />
 
 ---
 
